@@ -1,0 +1,10 @@
+---
+
+# CPU
+monitor_min_cpu: 1
+
+# Mem
+monitor_min_ram: 100
+
+# Disk
+monitor_min_disk: 50000000

@@ -1,0 +1,767 @@
+{
+    "ansible_apparmor": {
+        "status": "disabled"
+    }, 
+    "ansible_architecture": "x86_64", 
+    "ansible_bios_date": "05/19/2017", 
+    "ansible_bios_version": "6.00", 
+    "ansible_cmdline": {
+        "BOOT_IMAGE": "/vmlinuz-3.10.0-327.el7.x86_64", 
+        "LANG": "en_US.UTF-8", 
+        "crashkernel": "auto", 
+        "quiet": true, 
+        "rd.lvm.lv": "centos/swap", 
+        "rhgb": true, 
+        "ro": true, 
+        "root": "/dev/mapper/centos-root"
+    }, 
+    "ansible_date_time": {
+        "date": "2018-11-16", 
+        "day": "16", 
+        "epoch": "1542299835", 
+        "hour": "00", 
+        "iso8601": "2018-11-15T16:37:15Z", 
+        "iso8601_basic": "20181116T003715864614", 
+        "iso8601_basic_short": "20181116T003715", 
+        "iso8601_micro": "2018-11-15T16:37:15.864676Z", 
+        "minute": "37", 
+        "month": "11", 
+        "second": "15", 
+        "time": "00:37:15", 
+        "tz": "CST", 
+        "tz_offset": "+0800", 
+        "weekday": "Friday", 
+        "weekday_number": "5", 
+        "weeknumber": "46", 
+        "year": "2018"
+    }, 
+    "ansible_device_links": {
+        "ids": {
+            "dm-0": [
+                "dm-name-centos-root", 
+                "dm-uuid-LVM-UVMIuVTBiKflQ0BGsPgrQ35EFLURRkAtPZAERvKP37MrbvQj8HXE2G06H4hkwEyA"
+            ], 
+            "dm-1": [
+                "dm-name-centos-swap", 
+                "dm-uuid-LVM-UVMIuVTBiKflQ0BGsPgrQ35EFLURRkAtDxXMVaGdlO7KtMMTcAAjit90PMH8Yjaf"
+            ], 
+            "dm-2": [
+                "dm-name-centos-home", 
+                "dm-uuid-LVM-UVMIuVTBiKflQ0BGsPgrQ35EFLURRkAtHHHucVItpmMrd5GNqa0nd2s3Qz6bFbti"
+            ], 
+            "dm-4": [
+                "dm-name-docker-253:0-67439390-62b1de148ad0bc33cdd7700b8ef3f3956c3fe11287ede7261639108cdff2dc19"
+            ], 
+            "dm-5": [
+                "dm-name-docker-253:0-67439390-4d1a14c12ca19467a042b689b740cf41cadc87bbf387b7f3f254ba64db46152a"
+            ], 
+            "dm-6": [
+                "dm-name-docker-253:0-67439390-6999e56497812274d5c4e0ac1ab1c2f0f9772027c4bfe31c6bd9914548050182"
+            ], 
+            "sda2": [
+                "lvm-pv-uuid-VF3UBS-dRya-6L9L-3uwq-5qWW-BJsi-5WURQH"
+            ], 
+            "sr0": [
+                "ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"
+            ]
+        }, 
+        "labels": {
+            "sr0": [
+                "CentOS\\x207\\x20x86_64"
+            ]
+        }, 
+        "masters": {
+            "dm-3": [
+                "dm-4", 
+                "dm-5", 
+                "dm-6"
+            ], 
+            "loop0": [
+                "dm-3"
+            ], 
+            "loop1": [
+                "dm-3"
+            ], 
+            "sda2": [
+                "dm-0", 
+                "dm-1", 
+                "dm-2"
+            ]
+        }, 
+        "uuids": {
+            "dm-0": [
+                "39dad39e-f051-4d88-bca8-83c5587a98b6"
+            ], 
+            "dm-1": [
+                "c813ec18-c8e5-4fb6-8449-a6b051d13ca6"
+            ], 
+            "dm-2": [
+                "67ea5727-fb3d-436a-94e9-79ac6b1599d9"
+            ], 
+            "dm-6": [
+                "208a7c3a-3616-4e82-8d7b-e716a4518b17"
+            ], 
+            "sda1": [
+                "101b3398-9fa0-4bf1-8510-2c21e2be775d"
+            ], 
+            "sr0": [
+                "2015-12-09-23-14-10-00"
+            ]
+        }
+    }, 
+    "ansible_devices": {
+        "dm-0": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "dm-name-centos-root", 
+                    "dm-uuid-LVM-UVMIuVTBiKflQ0BGsPgrQ35EFLURRkAtPZAERvKP37MrbvQj8HXE2G06H4hkwEyA"
+                ], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": [
+                    "39dad39e-f051-4d88-bca8-83c5587a98b6"
+                ]
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "104857600", 
+            "sectorsize": "512", 
+            "size": "50.00 GB", 
+            "support_discard": "0", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "dm-1": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "dm-name-centos-swap", 
+                    "dm-uuid-LVM-UVMIuVTBiKflQ0BGsPgrQ35EFLURRkAtDxXMVaGdlO7KtMMTcAAjit90PMH8Yjaf"
+                ], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": [
+                    "c813ec18-c8e5-4fb6-8449-a6b051d13ca6"
+                ]
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "4194304", 
+            "sectorsize": "512", 
+            "size": "2.00 GB", 
+            "support_discard": "0", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "dm-2": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "dm-name-centos-home", 
+                    "dm-uuid-LVM-UVMIuVTBiKflQ0BGsPgrQ35EFLURRkAtHHHucVItpmMrd5GNqa0nd2s3Qz6bFbti"
+                ], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": [
+                    "67ea5727-fb3d-436a-94e9-79ac6b1599d9"
+                ]
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "141443072", 
+            "sectorsize": "512", 
+            "size": "67.45 GB", 
+            "support_discard": "0", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "dm-3": {
+            "holders": [
+                "docker-253:0-67439390-62b1de148ad0bc33cdd7700b8ef3f3956c3fe11287ede7261639108cdff2dc19", 
+                "docker-253:0-67439390-4d1a14c12ca19467a042b689b740cf41cadc87bbf387b7f3f254ba64db46152a", 
+                "docker-253:0-67439390-6999e56497812274d5c4e0ac1ab1c2f0f9772027c4bfe31c6bd9914548050182"
+            ], 
+            "host": "", 
+            "links": {
+                "ids": [], 
+                "labels": [], 
+                "masters": [
+                    "dm-4", 
+                    "dm-5", 
+                    "dm-6"
+                ], 
+                "uuids": []
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "209715200", 
+            "sectorsize": "512", 
+            "size": "100.00 GB", 
+            "support_discard": "4096", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "dm-4": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "dm-name-docker-253:0-67439390-62b1de148ad0bc33cdd7700b8ef3f3956c3fe11287ede7261639108cdff2dc19"
+                ], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": []
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "20971520", 
+            "sectorsize": "512", 
+            "size": "10.00 GB", 
+            "support_discard": "65536", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "dm-5": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "dm-name-docker-253:0-67439390-4d1a14c12ca19467a042b689b740cf41cadc87bbf387b7f3f254ba64db46152a"
+                ], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": []
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "20971520", 
+            "sectorsize": "512", 
+            "size": "10.00 GB", 
+            "support_discard": "65536", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "dm-6": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "dm-name-docker-253:0-67439390-6999e56497812274d5c4e0ac1ab1c2f0f9772027c4bfe31c6bd9914548050182"
+                ], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": [
+                    "208a7c3a-3616-4e82-8d7b-e716a4518b17"
+                ]
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "20971520", 
+            "sectorsize": "512", 
+            "size": "10.00 GB", 
+            "support_discard": "65536", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "loop0": {
+            "holders": [
+                "docker-253:0-67439390-pool"
+            ], 
+            "host": "", 
+            "links": {
+                "ids": [], 
+                "labels": [], 
+                "masters": [
+                    "dm-3"
+                ], 
+                "uuids": []
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "209715200", 
+            "sectorsize": "512", 
+            "size": "100.00 GB", 
+            "support_discard": "4096", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "loop1": {
+            "holders": [
+                "docker-253:0-67439390-pool"
+            ], 
+            "host": "", 
+            "links": {
+                "ids": [], 
+                "labels": [], 
+                "masters": [
+                    "dm-3"
+                ], 
+                "uuids": []
+            }, 
+            "model": null, 
+            "partitions": {}, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "", 
+            "sectors": "4194304", 
+            "sectorsize": "512", 
+            "size": "2.00 GB", 
+            "support_discard": "4096", 
+            "vendor": null, 
+            "virtual": 1
+        }, 
+        "sda": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [], 
+                "labels": [], 
+                "masters": [], 
+                "uuids": []
+            }, 
+            "model": "VMware Virtual S", 
+            "partitions": {
+                "sda1": {
+                    "holders": [], 
+                    "links": {
+                        "ids": [], 
+                        "labels": [], 
+                        "masters": [], 
+                        "uuids": [
+                            "101b3398-9fa0-4bf1-8510-2c21e2be775d"
+                        ]
+                    }, 
+                    "sectors": "1024000", 
+                    "sectorsize": 512, 
+                    "size": "500.00 MB", 
+                    "start": "2048", 
+                    "uuid": "101b3398-9fa0-4bf1-8510-2c21e2be775d"
+                }, 
+                "sda2": {
+                    "holders": [
+                        "centos-root", 
+                        "centos-swap", 
+                        "centos-home"
+                    ], 
+                    "links": {
+                        "ids": [
+                            "lvm-pv-uuid-VF3UBS-dRya-6L9L-3uwq-5qWW-BJsi-5WURQH"
+                        ], 
+                        "labels": [], 
+                        "masters": [
+                            "dm-0", 
+                            "dm-1", 
+                            "dm-2"
+                        ], 
+                        "uuids": []
+                    }, 
+                    "sectors": "250632192", 
+                    "sectorsize": 512, 
+                    "size": "119.51 GB", 
+                    "start": "1026048", 
+                    "uuid": null
+                }
+            }, 
+            "removable": "0", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "deadline", 
+            "sectors": "251658240", 
+            "sectorsize": "512", 
+            "size": "120.00 GB", 
+            "support_discard": "0", 
+            "vendor": "VMware,", 
+            "virtual": 1
+        }, 
+        "sr0": {
+            "holders": [], 
+            "host": "", 
+            "links": {
+                "ids": [
+                    "ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"
+                ], 
+                "labels": [
+                    "CentOS\\x207\\x20x86_64"
+                ], 
+                "masters": [], 
+                "uuids": [
+                    "2015-12-09-23-14-10-00"
+                ]
+            }, 
+            "model": "VMware IDE CDR10", 
+            "partitions": {}, 
+            "removable": "1", 
+            "rotational": "1", 
+            "sas_address": null, 
+            "sas_device_handle": null, 
+            "scheduler_mode": "cfq", 
+            "sectors": "8456192", 
+            "sectorsize": "2048", 
+            "size": "4.03 GB", 
+            "support_discard": "0", 
+            "vendor": "NECVMWar", 
+            "virtual": 1
+        }
+    }, 
+    "ansible_distribution": "CentOS", 
+    "ansible_distribution_file_parsed": true, 
+    "ansible_distribution_file_path": "/etc/redhat-release", 
+    "ansible_distribution_file_variety": "RedHat", 
+    "ansible_distribution_major_version": "7", 
+    "ansible_distribution_release": "Core", 
+    "ansible_distribution_version": "7.2.1511", 
+    "ansible_dns": {
+        "nameservers": [
+            "114.114.114.114", 
+            "192.168.72.2"
+        ], 
+        "search": [
+            "localdomain"
+        ]
+    }, 
+    "ansible_domain": "localdomain", 
+    "ansible_effective_group_id": 0, 
+    "ansible_effective_user_id": 0, 
+    "ansible_env": {
+        "HOME": "/root", 
+        "LANG": "en_US.UTF-8", 
+        "LESSOPEN": "||/usr/bin/lesspipe.sh %s", 
+        "LOGNAME": "root", 
+        "MAIL": "/var/mail/root", 
+        "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin", 
+        "PWD": "/root", 
+        "SHELL": "/bin/bash", 
+        "SHLVL": "2", 
+        "SSH_CLIENT": "192.168.72.131 58300 22", 
+        "SSH_CONNECTION": "192.168.72.131 58300 192.168.72.131 22", 
+        "SSH_TTY": "/dev/pts/5", 
+        "TERM": "xterm", 
+        "USER": "root", 
+        "XDG_RUNTIME_DIR": "/run/user/0", 
+        "XDG_SESSION_ID": "194", 
+        "_": "/usr/bin/python"
+    }, 
+    "ansible_fips": false, 
+    "ansible_form_factor": "Other", 
+    "ansible_fqdn": "localhost.localdomain", 
+    "ansible_hostname": "localhost", 
+    "ansible_kernel": "3.10.0-327.el7.x86_64", 
+    "ansible_local": {}, 
+    "ansible_lsb": {}, 
+    "ansible_lvm": {
+        "lvs": {
+            "home": {
+                "size_g": "67.45", 
+                "vg": "centos"
+            }, 
+            "root": {
+                "size_g": "50.00", 
+                "vg": "centos"
+            }, 
+            "swap": {
+                "size_g": "2.00", 
+                "vg": "centos"
+            }
+        }, 
+        "pvs": {
+            "/dev/sda2": {
+                "free_g": "0.06", 
+                "size_g": "119.51", 
+                "vg": "centos"
+            }
+        }, 
+        "vgs": {
+            "centos": {
+                "free_g": "0.06", 
+                "num_lvs": "3", 
+                "num_pvs": "1", 
+                "size_g": "119.51"
+            }
+        }
+    }, 
+    "ansible_machine": "x86_64", 
+    "ansible_machine_id": "881479921c724b5594c5d07c500f612e", 
+    "ansible_memfree_mb": 319, 
+    "ansible_memory_mb": {
+        "nocache": {
+            "free": 776, 
+            "used": 1056
+        }, 
+        "real": {
+            "free": 319, 
+            "total": 1832, 
+            "used": 1513
+        }, 
+        "swap": {
+            "cached": 14, 
+            "free": 1085, 
+            "total": 2047, 
+            "used": 962
+        }
+    }, 
+    "ansible_memtotal_mb": 1832, 
+    "ansible_mounts": [
+        {
+            "block_available": 10914642, 
+            "block_size": 4096, 
+            "block_total": 13100800, 
+            "block_used": 2186158, 
+            "device": "/dev/mapper/centos-root", 
+            "fstype": "xfs", 
+            "inode_available": 52371472, 
+            "inode_total": 52428800, 
+            "inode_used": 57328, 
+            "mount": "/", 
+            "options": "rw,relatime,attr2,inode64,noquota", 
+            "size_available": 44706373632, 
+            "size_total": 53660876800, 
+            "uuid": "39dad39e-f051-4d88-bca8-83c5587a98b6"
+        }, 
+        {
+            "block_available": 17663519, 
+            "block_size": 4096, 
+            "block_total": 17671751, 
+            "block_used": 8232, 
+            "device": "/dev/mapper/centos-home", 
+            "fstype": "xfs", 
+            "inode_available": 70721533, 
+            "inode_total": 70721536, 
+            "inode_used": 3, 
+            "mount": "/home", 
+            "options": "rw,relatime,attr2,inode64,noquota", 
+            "size_available": 72349773824, 
+            "size_total": 72383492096, 
+            "uuid": "67ea5727-fb3d-436a-94e9-79ac6b1599d9"
+        }, 
+        {
+            "block_available": 95372, 
+            "block_size": 4096, 
+            "block_total": 127147, 
+            "block_used": 31775, 
+            "device": "/dev/sda1", 
+            "fstype": "xfs", 
+            "inode_available": 511670, 
+            "inode_total": 512000, 
+            "inode_used": 330, 
+            "mount": "/boot", 
+            "options": "rw,relatime,attr2,inode64,noquota", 
+            "size_available": 390643712, 
+            "size_total": 520794112, 
+            "uuid": "101b3398-9fa0-4bf1-8510-2c21e2be775d"
+        }, 
+        {
+            "block_available": 2394616, 
+            "block_size": 4096, 
+            "block_total": 2618624, 
+            "block_used": 224008, 
+            "device": "/dev/mapper/docker-253:0-67439390-62b1de148ad0bc33cdd7700b8ef3f3956c3fe11287ede7261639108cdff2dc19", 
+            "fstype": "xfs", 
+            "inode_available": 10467816, 
+            "inode_total": 10484736, 
+            "inode_used": 16920, 
+            "mount": "/var/lib/docker/devicemapper/mnt/62b1de148ad0bc33cdd7700b8ef3f3956c3fe11287ede7261639108cdff2dc19", 
+            "options": "rw,relatime,nouuid,attr2,inode64,logbsize=64k,sunit=128,swidth=128,noquota", 
+            "size_available": 9808347136, 
+            "size_total": 10725883904, 
+            "uuid": "208a7c3a-3616-4e82-8d7b-e716a4518b17"
+        }, 
+        {
+            "block_available": 2394616, 
+            "block_size": 4096, 
+            "block_total": 2618624, 
+            "block_used": 224008, 
+            "device": "/dev/mapper/docker-253:0-67439390-4d1a14c12ca19467a042b689b740cf41cadc87bbf387b7f3f254ba64db46152a", 
+            "fstype": "xfs", 
+            "inode_available": 10467816, 
+            "inode_total": 10484736, 
+            "inode_used": 16920, 
+            "mount": "/var/lib/docker/devicemapper/mnt/4d1a14c12ca19467a042b689b740cf41cadc87bbf387b7f3f254ba64db46152a", 
+            "options": "rw,relatime,nouuid,attr2,inode64,logbsize=64k,sunit=128,swidth=128,noquota", 
+            "size_available": 9808347136, 
+            "size_total": 10725883904, 
+            "uuid": "208a7c3a-3616-4e82-8d7b-e716a4518b17"
+        }, 
+        {
+            "block_available": 2383528, 
+            "block_size": 4096, 
+            "block_total": 2618624, 
+            "block_used": 235096, 
+            "device": "/dev/mapper/docker-253:0-67439390-6999e56497812274d5c4e0ac1ab1c2f0f9772027c4bfe31c6bd9914548050182", 
+            "fstype": "xfs", 
+            "inode_available": 10467804, 
+            "inode_total": 10484736, 
+            "inode_used": 16932, 
+            "mount": "/var/lib/docker/devicemapper/mnt/6999e56497812274d5c4e0ac1ab1c2f0f9772027c4bfe31c6bd9914548050182", 
+            "options": "rw,relatime,nouuid,attr2,inode64,logbsize=64k,sunit=128,swidth=128,noquota", 
+            "size_available": 9762930688, 
+            "size_total": 10725883904, 
+            "uuid": "208a7c3a-3616-4e82-8d7b-e716a4518b17"
+        }, 
+        {
+            "block_available": 0, 
+            "block_size": 2048, 
+            "block_total": 2113862, 
+            "block_used": 2113862, 
+            "device": "/dev/sr0", 
+            "fstype": "iso9660", 
+            "inode_available": 0, 
+            "inode_total": 0, 
+            "inode_used": 0, 
+            "mount": "/mnt", 
+            "options": "ro,relatime", 
+            "size_available": 0, 
+            "size_total": 4329189376, 
+            "uuid": "2015-12-09-23-14-10-00"
+        }
+    ], 
+    "ansible_nodename": "localhost.localdomain", 
+    "ansible_os_family": "RedHat", 
+    "ansible_pkg_mgr": "yum", 
+    "ansible_processor": [
+        "0", 
+        "GenuineIntel", 
+        "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz"
+    ], 
+    "ansible_processor_cores": 1, 
+    "ansible_processor_count": 1, 
+    "ansible_processor_threads_per_core": 1, 
+    "ansible_processor_vcpus": 1, 
+    "ansible_product_name": "VMware Virtual Platform", 
+    "ansible_product_serial": "VMware-56 4d 4d 4e 23 74 a8 c0-f9 ab 3b 27 3c 43 60 d3", 
+    "ansible_product_uuid": "564D4D4E-2374-A8C0-F9AB-3B273C4360D3", 
+    "ansible_product_version": "None", 
+    "ansible_python": {
+        "executable": "/usr/bin/python", 
+        "has_sslcontext": true, 
+        "type": "CPython", 
+        "version": {
+            "major": 2, 
+            "micro": 5, 
+            "minor": 7, 
+            "releaselevel": "final", 
+            "serial": 0
+        }, 
+        "version_info": [
+            2, 
+            7, 
+            5, 
+            "final", 
+            0
+        ]
+    }, 
+    "ansible_python_version": "2.7.5", 
+    "ansible_real_group_id": 0, 
+    "ansible_real_user_id": 0, 
+    "ansible_selinux": {
+        "status": "disabled"
+    }, 
+    "ansible_selinux_python_present": true, 
+    "ansible_service_mgr": "systemd", 
+    "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPjcktMvJ2lj2Ta6cd42prp0HlcTT86cMZyeU1tAaCb7oHp2NRObbpfJyegA7um6i/DWnfOp8XOddxcgr/cUkXs=", 
+    "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIO70mbv4H6JepONYsLK1hV3zfzou7TBZWrnD/4iZg3B2", 
+    "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDP7fF6QKHyAbiKQ/B+uUz9tqINB7qxCOGRMDCcdV9XMqA1HpyXGuJB58w4a9uxU0gOiz4KZ5+FVcaQbB+ZOOaTuvVLBQnXmHwF0khYPsYc+LFaaDPYEQgXs5HTfUCWxORjEgYI1+PYUzhlV2Pot3OI6IF2D+Galk7okBdIIy+Ezm3FZ6qh4MNZ4u9v/YICD6Cli/rcPOwBF+TPU435pZZoOVrgbFJ0ozOYJrbS2wFJMtOIG5QuDaSabKU6GAGcIZnaMIN5vnZhtndZ7rggXbvUOeKaIeHuAqzPGKpYqwDcAkaJDQOtD8DGA/gMAoShwPN5MY5QHD00pCDLf781gIiF", 
+    "ansible_swapfree_mb": 1085, 
+    "ansible_swaptotal_mb": 2047, 
+    "ansible_system": "Linux", 
+    "ansible_system_capabilities": [
+        "cap_chown", 
+        "cap_dac_override", 
+        "cap_dac_read_search", 
+        "cap_fowner", 
+        "cap_fsetid", 
+        "cap_kill", 
+        "cap_setgid", 
+        "cap_setuid", 
+        "cap_setpcap", 
+        "cap_linux_immutable", 
+        "cap_net_bind_service", 
+        "cap_net_broadcast", 
+        "cap_net_admin", 
+        "cap_net_raw", 
+        "cap_ipc_lock", 
+        "cap_ipc_owner", 
+        "cap_sys_module", 
+        "cap_sys_rawio", 
+        "cap_sys_chroot", 
+        "cap_sys_ptrace", 
+        "cap_sys_pacct", 
+        "cap_sys_admin", 
+        "cap_sys_boot", 
+        "cap_sys_nice", 
+        "cap_sys_resource", 
+        "cap_sys_time", 
+        "cap_sys_tty_config", 
+        "cap_mknod", 
+        "cap_lease", 
+        "cap_audit_write", 
+        "cap_audit_control", 
+        "cap_setfcap", 
+        "cap_mac_override", 
+        "cap_mac_admin", 
+        "cap_syslog", 
+        "35", 
+        "36+ep"
+    ], 
+    "ansible_system_capabilities_enforced": "True", 
+    "ansible_system_vendor": "VMware, Inc.", 
+    "ansible_uptime_seconds": 618052, 
+    "ansible_user_dir": "/root", 
+    "ansible_user_gecos": "root", 
+    "ansible_user_gid": 0, 
+    "ansible_user_id": "root", 
+    "ansible_user_shell": "/bin/bash", 
+    "ansible_user_uid": 0, 
+    "ansible_userspace_architecture": "x86_64", 
+    "ansible_userspace_bits": "64", 
+    "gather_subset": [
+        "hardware"
+    ], 
+    "module_setup": true
+}

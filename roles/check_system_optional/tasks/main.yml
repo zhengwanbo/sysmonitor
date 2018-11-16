@@ -1,0 +1,40 @@
+---
+
+- name: Preflight check - Check Monitor server's CPU
+  fail:
+    msg: "This machine does not have sufficient CPU to run Monitor, at least {{ monitor_min_cpu }} cores."
+  when:
+    - "'monitoring_servers' in group_names"
+    - ansible_processor_vcpus < monitor_min_cpu|int
+
+- name: Preflight check - Check Monitor server's RAM
+  fail:
+    msg: "This machine does not have sufficient RAM to run Monitor, at least {{ monitor_min_ram }} MB."
+  when:
+    - "'monitoring_servers' in group_names"
+    - ansible_memtotal_mb < monitor_min_ram|int
+
+- name: Set deploy_dir if not presented
+  set_fact: deploy_dir="/home/{{ deploy_user }}/deploy"
+  when: deploy_dir is not defined
+
+- name: Determine which mountpoint deploy dir exists on
+  shell: "df {{ deploy_dir }} | tail -n1 | awk '{print $NF}'"
+  register: deploy_partition
+  changed_when: False
+
+- set_fact:
+    monitor_disk_alert: "true"
+  when:
+    - "'monitoring_servers' in group_names"
+    - item.mount == deploy_partition.stdout
+    - item.size_available < monitor_min_disk|int
+  with_items: "{{ ansible_mounts }}"
+
+- name: Preflight check - Check Monitor server's disk space
+  debug:
+    msg: 'The file system mounted at {{ deploy_partition.stdout }} does not meet minimum disk space requirement: at least {{ monitor_min_disk/1000000000 }} GB.'
+  when:
+    - monitor_disk_alert is defined
+    - monitor_disk_alert
+    - "'monitoring_servers' in group_names"

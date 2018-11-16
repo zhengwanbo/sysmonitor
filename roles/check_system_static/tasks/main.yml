@@ -1,0 +1,26 @@
+---
+
+- name: Disk space check - Fail task when disk is full
+  raw: df -h . | tail -n1
+  register: disk_space_st
+  failed_when: " '100%' in disk_space_st.stdout "
+  changed_when: false
+
+- name: get facts
+  setup:
+    gather_subset: hardware
+
+- name: Preflight check - Linux OS family and distribution version
+  fail:
+    msg: "Red Hat Enterprise Linux/CentOS 6 is deprecated. Please use CentOS 7.3 and above. See https://github.com/pingcap/docs/blob/master/op-guide/recommendation.md"
+  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '6'"
+
+- name: Preflight check - Check Linux kernel overcommit_memory parameter
+  shell: "sysctl -n vm.overcommit_memory"
+  become: true
+  register: vm_overcommit_memory
+
+- name: Preflight check - Fail when Linux kernel vm.overcommit_memory parameter is set to 2
+  fail:
+    msg: "It is not recommended to set vm.overcommit_memory to 2, set it to 0 or 1."
+  when: vm_overcommit_memory.stdout | int == 2

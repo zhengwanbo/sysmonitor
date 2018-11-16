@@ -1,0 +1,73 @@
+---
+
+- name: check config locally
+  hosts: localhost
+  any_errors_fatal: true
+  tags:
+    - always
+  roles:
+    - check_config_static
+
+- name: check system environment
+  hosts: monitored_servers
+  any_errors_fatal: true
+  tags:
+    - always
+  roles:
+    - check_system_static
+
+- name: initializing deployment target
+  hosts: all
+  any_errors_fatal: true
+  tags:
+    - always
+  roles:
+    - check_config_dynamic
+
+- name: deploying node_exporter
+  hosts: monitored_servers
+  tags:
+    - node_exporter
+  roles:
+    - node_exporter
+
+- name: deploying blackbox_exporter
+  hosts: monitored_servers
+  tags:
+    - blackbox_exporter
+  roles:
+    - blackbox_exporter
+
+- name: deploying alertmanager
+  hosts: alertmanager_servers
+  tags:
+    - alertmanager
+  roles:
+    - alertmanager
+
+- name: deploying pushgateway
+  hosts: monitoring_servers
+  tags:
+    - pushgateway
+  roles:
+    - pushgateway
+
+- name: deploying prometheus
+  hosts: monitoring_servers
+  tags:
+    - prometheus
+  roles:
+    - prometheus
+
+- name: deploying grafana
+  hosts: grafana_servers
+  tags:
+    - grafana
+  roles:
+    - grafana
+
+- name: finalizing deployment target
+  hosts: all
+  become: true
+  roles:
+    - { role: firewalld, when: enable_firewalld is defined and enable_firewalld }

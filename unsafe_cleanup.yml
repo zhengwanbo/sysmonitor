@@ -1,0 +1,49 @@
+---
+
+- import_playbook: stop.yml
+
+- hosts: monitored_servers
+  tasks:
+    - name: clean systemd config
+      file: path="/etc/systemd/system/{{ item }}" state=absent
+      become: true
+      when: process_supervision == 'systemd'
+      with_items:
+        - node_exporter-{{ node_exporter_port }}.service
+        - blackbox_exporter-{{ blackbox_exporter_port }}.service
+
+- hosts: alertmanager_servers
+  tasks:
+    - name: clean systemd config
+      file: path="/etc/systemd/system/{{ item }}" state=absent
+      become: true
+      when: process_supervision == 'systemd'
+      with_items:
+        - alertmanager-{{ alertmanager_port }}.service
+
+- hosts: monitoring_servers
+  tasks:
+    - name: clean systemd config
+      file: path="/etc/systemd/system/{{ item }}" state=absent
+      become: true
+      when: process_supervision == 'systemd'
+      with_items:
+        - pushgateway-{{ pushgateway_port }}.service
+        - prometheus-{{ prometheus_port }}.service
+
+- hosts: grafana_servers
+  tasks:
+    - name: clean systemd config
+      file: path="/etc/systemd/system/{{ item }}" state=absent
+      become: true
+      when: process_supervision == 'systemd'
+      with_items:
+        - grafana-{{ grafana_port }}.service
+
+- hosts: all
+  tasks:
+    - name: using rm command to clean up deploy_dir
+      shell: "rm -rf {{ deploy_dir }}/*"
+
+    - name: cleaning up deploy dir
+      file: path={{ deploy_dir }} state=absent

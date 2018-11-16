@@ -1,0 +1,21 @@
+---
+
+- name: initializing deployment target
+  hosts: localhost
+  gather_facts: false
+  roles:
+    - check_config_static
+
+- name: check node config
+  hosts: all
+  gather_facts: false
+  become: true
+  roles:
+    - pre-ansible
+
+- name: check system
+  hosts: all
+  any_errors_fatal: true
+  roles:
+    - check_system_static
+    - check_system_optional
